@@ -1,7 +1,7 @@
-package com.jxq.ssm.controller;
+package com.jxq.login.controller;
 
-import com.jxq.ssm.pojo.User;
-import com.jxq.ssm.service.UserService;
+import com.jxq.login.pojo.User;
+import com.jxq.login.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- * Created by jingxingqiang on 2019/7/17 23:49
+ * Created by jingxingqiang on 2019/7/21 20:59
  */
 @Controller
 @RequestMapping("/user")
@@ -67,11 +67,4 @@ public class UserController {
         return "redirect:login";
     }
 
-    @RequestMapping("/findAll")
-    public String findAll(Model model) {
-        List<User> userList = userService.findAll();
-        model.addAttribute("userList", userList);
-
-        return "userList";
-    }
 }

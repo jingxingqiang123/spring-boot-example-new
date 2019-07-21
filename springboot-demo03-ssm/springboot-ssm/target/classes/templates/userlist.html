@@ -10,11 +10,13 @@
         <th>id</th>
         <th>用户名</th>
         <th>密码</th>
+        <th>昵称</th>
     </tr>
     <tr th:each="user:${userList}"><!--循环userList,以person作为形参-->
         <td th:text="${user.id}"></td>
         <td th:text="${user.username}"></td>
         <td th:text="${user.password}"></td>
+        <td th:text="${user.realname}"></td>
     </tr>
 </table>
 

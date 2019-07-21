@@ -1,15 +1,15 @@
-package com.jxq.ssm.mapper;
+package com.jxq.login.mapper;
 
-import com.jxq.ssm.pojo.User;
-import org.apache.ibatis.annotations.Mapper;
+import com.jxq.login.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
 
-@Mapper
+/**
+ * Created by jingxingqiang on 2019/7/21 20:59
+ */
+
 public interface UserMapper {
 
-    List<User> findAll();
 
     User checkByUP(@Param("username") String username,
                    @Param("password") String password);

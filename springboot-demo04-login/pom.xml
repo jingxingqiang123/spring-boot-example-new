@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.jxq</groupId>
-    <artifactId>springboot-ssm</artifactId>
+    <artifactId>login</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-ssm</name>
+    <name>login</name>
     <packaging>jar</packaging>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Spring Boot login</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

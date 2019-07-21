@@ -1,18 +1,19 @@
-package com.jxq.ssm.service.impl;
+package com.jxq.login.service.Ipml;
 
-import com.jxq.ssm.mapper.UserMapper;
-import com.jxq.ssm.pojo.User;
-import com.jxq.ssm.service.UserService;
+import com.jxq.login.mapper.UserMapper;
+import com.jxq.login.pojo.User;
+import com.jxq.login.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * Created by jingxingqiang on 2019/7/17 23:51
+ * Created by jingxingqiang on 2019/7/21 21:00
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceIpml implements UserService {
+
     @Autowired
     private UserMapper userMapper;
 
@@ -40,9 +41,6 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
-
-    @Override
-    public List<User> findAll() {
-        return userMapper.findAll();
-    }
 }
+
+

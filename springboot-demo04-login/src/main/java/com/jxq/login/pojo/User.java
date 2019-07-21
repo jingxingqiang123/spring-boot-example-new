@@ -1,7 +1,7 @@
-package com.jxq.ssm.pojo;
+package com.jxq.login.pojo;
 
 /**
- * Created by jingxingqiang on 2019/7/17 23:52
+ * Created by jingxingqiang on 2019/7/21 20:59
  */
 public class User {
     private Integer id;

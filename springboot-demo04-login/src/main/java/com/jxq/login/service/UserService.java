@@ -1,11 +1,8 @@
-package com.jxq.ssm.service;
+package com.jxq.login.service;
 
-import com.jxq.ssm.pojo.User;
-
-import java.util.List;
+import com.jxq.login.pojo.User;
 
 public interface UserService {
-    List<User> findAll();
 
     User checkByUP(String username, String password) throws Exception;
 
