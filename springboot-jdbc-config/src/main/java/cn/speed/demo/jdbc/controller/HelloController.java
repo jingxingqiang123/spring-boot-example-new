@@ -1,7 +1,7 @@
-package cn.itcast.controller;
+package cn.speed.demo.jdbc.controller;
 
-import cn.itcast.pojo.User;
-import cn.itcast.servcice.UserService;
+import cn.speed.demo.jdbc.pojo.User;
+import cn.speed.demo.jdbc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-/**
- * @author: HuYi.Zhang
- * @create: 2018-05-20 09:11
- **/
+
 @Controller
 @RequestMapping
 public class HelloController {
