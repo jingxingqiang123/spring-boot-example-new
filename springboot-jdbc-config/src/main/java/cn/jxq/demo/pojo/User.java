@@ -1,4 +1,4 @@
-package cn.speed.demo.jdbc.pojo;
+package cn.jxq.demo.pojo;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

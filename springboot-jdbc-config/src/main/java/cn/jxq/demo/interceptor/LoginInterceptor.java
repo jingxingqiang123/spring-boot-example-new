@@ -1,4 +1,4 @@
-package cn.speed.demo.jdbc.interceptor;
+package cn.jxq.demo.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +18,14 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.debug("preHandle method is running");
-        //return false; 默认
-        return true;
+        if (true) {
+            System.out.println("通过");
+            return true;    //放行
+        }
+        return false;
+        //System.out.println("拦截");
+        //return false; 默认 拦截
+
     }
 
     @Override

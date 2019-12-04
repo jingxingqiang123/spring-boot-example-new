@@ -1,11 +1,11 @@
-package cn.speed.demo.jdbc;
+package cn.jxq.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@MapperScan("cn.speed.demo.jdbc.mapper")
+@MapperScan("cn.jxq.demo.mapper")
 public class SpringbootJdbcgApplication {
 
     public static void main(String[] args) {

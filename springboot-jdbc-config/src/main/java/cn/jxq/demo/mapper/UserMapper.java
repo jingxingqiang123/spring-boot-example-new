@@ -1,8 +1,8 @@
-package cn.speed.demo.jdbc.mapper;
+package cn.jxq.demo.mapper;
 
 
 
-import cn.speed.demo.jdbc.pojo.User;
+import cn.jxq.demo.pojo.User;
 import tk.mybatis.mapper.common.Mapper;
 
 public interface UserMapper extends Mapper<User> {

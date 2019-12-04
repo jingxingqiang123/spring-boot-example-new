@@ -1,8 +1,8 @@
-package cn.speed.demo.jdbc.service.impl;
+package cn.jxq.demo.service.impl;
 
-import cn.speed.demo.jdbc.mapper.UserMapper;
-import cn.speed.demo.jdbc.pojo.User;
-import cn.speed.demo.jdbc.service.UserService;
+import cn.jxq.demo.mapper.UserMapper;
+import cn.jxq.demo.pojo.User;
+import cn.jxq.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

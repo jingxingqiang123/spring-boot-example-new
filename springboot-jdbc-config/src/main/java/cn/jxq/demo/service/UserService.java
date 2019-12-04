@@ -1,7 +1,7 @@
-package cn.speed.demo.jdbc.service;
+package cn.jxq.demo.service;
 
 
-import cn.speed.demo.jdbc.pojo.User;
+import cn.jxq.demo.pojo.User;
 
 import java.util.List;
 
