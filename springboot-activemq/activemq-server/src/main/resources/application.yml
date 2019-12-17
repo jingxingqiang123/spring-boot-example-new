@@ -1,0 +1,10 @@
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true  #true 表示使用内置的MQ，false则连接服务器
+    pool:
+      enabled: true #如果此处设置为true，需要加如下的依赖包，否则会自动配置失败，报JmsMessagingTemplate注入失败#true表示使用连接池；false时，每发送一条数据创建一个连接
+      max-connections: 10 #连接池最大连接数
+      idle-timeout: 3000  #空闲的连接过期时间，默认为30秒
+
+
