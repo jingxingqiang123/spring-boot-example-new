@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/springboot-activemq/activemq-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-activemq/activemq-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-demo01-helloworld/helloworld" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-demo02-jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-demo03-ssm/springboot-ssm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-demo04-login" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hiberbate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-jdbc-config" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
