@@ -1,4 +1,4 @@
-package com.study.sringbootperfectweb.conifg.exception;
+package com.study.sringbootperfectweb.conifg;
 
 import com.study.sringbootperfectweb.enums.ResultCode;
 import com.study.sringbootperfectweb.exception.APIException;
@@ -18,7 +18,6 @@ public class ExceptionControllerAdvice {
 
     @ExceptionHandler(APIException.class)
     public ResultVo<String> APIExceptionHandler(APIException e) {
-        // 注意哦，这里传递的响应码枚举
         return new ResultVo<>(ResultCode.FAILED, e.getMsg());
     }
 

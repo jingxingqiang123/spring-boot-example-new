@@ -1,5 +1,6 @@
 package com.study.sringbootperfectweb.enums;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 
 /**

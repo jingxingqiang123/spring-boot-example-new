@@ -1,24 +1,24 @@
 package com.study.sringbootperfectweb.vo;
 
 import com.study.sringbootperfectweb.enums.ResultCode;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 
 /**
  * Created by jingxingqiang on 2020/4/10 22:05
  */
 @Getter
+@ApiModel
 public class ResultVo<T> {
-    /**
-     * 状态码，比如1000代响应表成功
-     */
+
+    @ApiModelProperty(value = "状态码", notes = "默认1000是成功")
     private int code;
-    /**
-     * 响应信息，用来说明响应情况
-     */
+
+    @ApiModelProperty(value = "响应信息", notes = "来说明响应情况")
     private String message;
-    /**
-     * 响应的具体数据
-     */
+
+    @ApiModelProperty(value = "响应的具体数据")
     private T data;
 
     public ResultVo(T data) {

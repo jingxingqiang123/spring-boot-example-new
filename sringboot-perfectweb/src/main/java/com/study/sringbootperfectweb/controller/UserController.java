@@ -3,6 +3,8 @@ package com.study.sringbootperfectweb.controller;
 import com.study.sringbootperfectweb.pojo.User;
 import com.study.sringbootperfectweb.service.UserService;
 import com.study.sringbootperfectweb.vo.ResultVo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -16,6 +18,7 @@ import javax.validation.Valid;
  * Created by jingxingqiang on 2020/4/10 21:15
  */
 @RestController
+@Api(tags = "用户接口")
 @RequestMapping("user")
 public class UserController {
     @Autowired
@@ -36,12 +39,14 @@ public class UserController {
 //        }
 //        return this.userService.addUser(user);
 //    }
+    @ApiOperation("添加用户")
     @PostMapping("/addUser")
     public String addUser(@RequestBody @Valid User user) {
 
         return this.userService.addUser(user);
     }
 
+    @ApiOperation("获取单个用户")
     @GetMapping("/getUser")
     public User getUser() {
         User user = new User();
