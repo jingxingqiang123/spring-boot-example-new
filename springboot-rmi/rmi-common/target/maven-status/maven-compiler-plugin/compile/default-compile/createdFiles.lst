@@ -1,0 +1,4 @@
+common\bean\User.class
+common\IUserService.class
+common\IPermissionService.class
+common\bean\Permission.class

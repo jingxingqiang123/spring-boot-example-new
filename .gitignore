@@ -1,5 +1,5 @@
-.idea
-.impl
-.class
-.lst
-.jar
+*.idea
+*.impl
+*.class
+*.lst
+*.jar
