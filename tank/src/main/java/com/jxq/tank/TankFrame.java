@@ -5,11 +5,14 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TankFrame extends Frame {
-    Tank tank = new Tank(200, 200, Dir.DOWN,this);
-    Bullet bullet = new Bullet(300, 300, Dir.DOWN);
-    private final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
+    Tank tank = new Tank(200, 200, Dir.DOWN, this);
+    //  Bullet bullet = new Bullet(300, 300, Dir.DOWN);
+    List<Bullet> bulletList = new ArrayList<>();
+    public final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
 
     public TankFrame() {
         setTitle("tank");
@@ -58,8 +61,15 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
+        Color color = g.getColor();
+        g.setColor(Color.WHITE);
+        g.drawString("子弹的个数" + bulletList.size(), 10,60);
+        g.setColor(color);
         tank.paint(g);
-        bullet.paint(g);
+        // 不能用foreach  会出现并发异常
+        for (int i = 0; i < bulletList.size(); i++) {
+            bulletList.get(i).paint(g);
+        }
     }
 
     class MyKeyListener extends KeyAdapter {

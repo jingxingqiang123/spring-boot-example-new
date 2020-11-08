@@ -68,6 +68,6 @@ public class Tank {
      * tank 发射子弹
      */
     public void fire() {
-        tankFrame.bullet  = new Bullet(this.x, this.y, this.dir);
+        tankFrame.bulletList.add(new Bullet(this.x, this.y, this.dir,this.tankFrame));
     }
 }
