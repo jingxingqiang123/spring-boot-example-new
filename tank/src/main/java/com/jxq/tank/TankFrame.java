@@ -7,7 +7,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class TankFrame extends Frame {
-    Tank tank = new Tank(200, 200, Dir.DOWN);
+    Tank tank = new Tank(200, 200, Dir.DOWN,this);
     Bullet bullet = new Bullet(300, 300, Dir.DOWN);
     private final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
 
@@ -33,7 +33,6 @@ public class TankFrame extends Frame {
     }
 
 
-
     Image offScreenImage = null;
 
     /**
@@ -56,11 +55,13 @@ public class TankFrame extends Frame {
         // 最后绘制在页面
         g.drawImage(offScreenImage, 0, 0, null);
     }
+
     @Override
     public void paint(Graphics g) {
         tank.paint(g);
         bullet.paint(g);
     }
+
     class MyKeyListener extends KeyAdapter {
         boolean bL = false;
         boolean bR = false;
@@ -117,6 +118,9 @@ public class TankFrame extends Frame {
                     break;
                 case KeyEvent.VK_DOWN:
                     bD = false;
+                    break;
+                case KeyEvent.VK_CONTROL:
+                    tank.fire();
                     break;
                 default:
                     break;
