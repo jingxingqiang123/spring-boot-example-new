@@ -8,13 +8,15 @@ import java.awt.event.WindowEvent;
 
 public class TankFrame extends Frame {
     Tank tank = new Tank(200, 200, Dir.DOWN);
+    Bullet bullet = new Bullet(300, 300, Dir.DOWN);
+    private final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
 
     public TankFrame() {
         setTitle("tank");
         // false不能改变大小
         setResizable(false);
         setVisible(true);
-        setSize(800, 1000);
+        setSize(GAME_WIDTH, GAME_HEIGHT);
         this.addKeyListener(new MyKeyListener());
         addWindowListener(new WindowAdapter() {
             /**
@@ -30,11 +32,35 @@ public class TankFrame extends Frame {
         });
     }
 
+
+
+    Image offScreenImage = null;
+
+    /**
+     * 双缓冲解决闪烁问题
+     *
+     * @param g
+     */
+    @Override
+    public void update(Graphics g) {
+        if (offScreenImage == null) {
+            offScreenImage = this.createImage(GAME_WIDTH, GAME_HEIGHT);
+        }
+        // 先在内存中画出坦克大小和子弹大小
+        Graphics gOffScreen = offScreenImage.getGraphics();
+        Color color = gOffScreen.getColor();
+        gOffScreen.setColor(Color.black);
+        gOffScreen.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+        gOffScreen.setColor(color);
+        paint(gOffScreen);
+        // 最后绘制在页面
+        g.drawImage(offScreenImage, 0, 0, null);
+    }
     @Override
     public void paint(Graphics g) {
         tank.paint(g);
+        bullet.paint(g);
     }
-
     class MyKeyListener extends KeyAdapter {
         boolean bL = false;
         boolean bR = false;

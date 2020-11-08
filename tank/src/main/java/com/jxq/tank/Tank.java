@@ -9,7 +9,7 @@ public class Tank {
     private int x, y;
     private Dir dir = Dir.DOWN;
     private boolean moving = false;
-    private static final int SPEED = 10;
+    private static final int SPEED = 5;
 
     public Tank(int x, int y, Dir dir) {
         super();
@@ -36,9 +36,10 @@ public class Tank {
 
     // 画出tank的方向
     public void paint(Graphics g) {
-        System.out.println("x: " + x);
-        System.out.println("y: " + y);
+        Color c = g.getColor();
+        g.setColor(Color.yellow);
         g.fillRect(x, y, 50, 50);
+        g.setColor(c);
         move();
 
     }
