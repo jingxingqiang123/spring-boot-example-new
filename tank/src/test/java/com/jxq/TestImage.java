@@ -27,7 +27,7 @@ public class TestImage {
     public void testImages1() {
         try {
             BufferedImage image = ImageIO.read(new File(
-                    "E:\\springboot-example\\tank\\src\\main\\resources\\images\\111.png"));
+                    "E:\\springboot-example\\tank\\src\\main\\resources\\images\\0.gif"));
             System.out.println(image.getWidth());
         } catch (IOException e) {
             e.printStackTrace();
