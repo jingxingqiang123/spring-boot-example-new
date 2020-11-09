@@ -11,6 +11,8 @@ public class Tank {
     private boolean moving = false;
     private static final int SPEED = 5;
     private TankFrame tankFrame = null;
+    public static final int WIDTH = ResourceMgr.tankD.getWidth();
+    public static final int HEIGHT = ResourceMgr.tankD.getHeight();
 
     public Tank(int x, int y, Dir dir, TankFrame tankFrame) {
         super();
@@ -38,7 +40,7 @@ public class Tank {
 
     // 画出tank的方向
     public void paint(Graphics g) {
-        switch (dir){
+        switch (dir) {
             case LTFT:
                 g.drawImage(ResourceMgr.tankL, x, y, null);
                 break;
@@ -78,6 +80,8 @@ public class Tank {
      * tank 发射子弹
      */
     public void fire() {
-        tankFrame.bulletList.add(new Bullet(this.x, this.y, this.dir,this.tankFrame));
+        int bX = this.x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
+        int bY = this.y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
+        tankFrame.bulletList.add(new Bullet(bX, bY, this.dir, this.tankFrame));
     }
 }
