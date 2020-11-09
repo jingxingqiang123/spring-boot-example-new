@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TankFrame extends Frame {
-    Tank tank = new Tank(200, 200, Dir.DOWN, this);
-    //  Bullet bullet = new Bullet(300, 300, Dir.DOWN);
+    Tank tank = new Tank(200, 400, Dir.UP, this);
     List<Bullet> bulletList = new ArrayList<>();
+    List<Tank> tanks = new ArrayList<>();
+
     public final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
 
     public TankFrame() {
@@ -70,6 +71,11 @@ public class TankFrame extends Frame {
         for (int i = 0; i < bulletList.size(); i++) {
             bulletList.get(i).paint(g);
         }
+        for (int i = 0; i < tanks.size(); i++) {
+            tanks.get(i).paint(g);
+        }
+
+
     }
 
     class MyKeyListener extends KeyAdapter {
