@@ -63,4 +63,18 @@ public class Bullet {
         }
         if (x < 0 || y < 0 || x > TankFrame.GAME_WIDTH || y > TankFrame.GAME_HEIGHT) living = false;
     }
+
+    public void bulletKillTank(Tank tank) {
+        Rectangle rectangle1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
+        Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), Tank.WIDTH, Tank.HEIGHT);
+        // 判断矩形tank和子弹是否相交
+        if (rectangle1.intersects(rectangle2)) {
+            tank.die();
+            this.die();
+        }
+    }
+
+    private void die() {
+        this.living = false;
+    }
 }

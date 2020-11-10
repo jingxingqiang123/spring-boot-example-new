@@ -65,6 +65,7 @@ public class TankFrame extends Frame {
         Color color = g.getColor();
         g.setColor(Color.WHITE);
         g.drawString("子弹的个数" + bulletList.size(), 10,60);
+        g.drawString("敌人tanks的个数" + tanks.size(), 10,80);
         g.setColor(color);
         tank.paint(g);
         // 不能用foreach  会出现并发异常
@@ -74,7 +75,12 @@ public class TankFrame extends Frame {
         for (int i = 0; i < tanks.size(); i++) {
             tanks.get(i).paint(g);
         }
-
+        // 判断每颗子弹和敌方tank是否相交
+        for (int i = 0; i < bulletList.size(); i++) {
+            for (int j = 0; j < tanks.size(); j++) {
+                bulletList.get(i).bulletKillTank(tanks.get(j));
+            }
+        }
 
     }
 

@@ -13,6 +13,7 @@ public class Tank {
     private TankFrame tankFrame = null;
     public static final int WIDTH = ResourceMgr.tankD.getWidth();
     public static final int HEIGHT = ResourceMgr.tankD.getHeight();
+    private boolean living = true;
 
     public Tank(int x, int y, Dir dir, TankFrame tankFrame) {
         super();
@@ -20,6 +21,22 @@ public class Tank {
         this.y = y;
         this.dir = dir;
         this.tankFrame = tankFrame;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public boolean isMoving() {
@@ -40,6 +57,7 @@ public class Tank {
 
     // 画出tank的方向
     public void paint(Graphics g) {
+        if (!living) tankFrame.tanks.remove(this);
         switch (dir) {
             case LTFT:
                 g.drawImage(ResourceMgr.tankL, x, y, null);
@@ -83,5 +101,9 @@ public class Tank {
         int bX = this.x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
         int bY = this.y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
         tankFrame.bulletList.add(new Bullet(bX, bY, this.dir, this.tankFrame));
+    }
+
+    public void die() {
+        this.living = false;
     }
 }
