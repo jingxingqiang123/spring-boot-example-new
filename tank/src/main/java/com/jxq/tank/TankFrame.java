@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TankFrame extends Frame {
-    Tank tank = new Tank(200, 400, Dir.UP,Group.GOOD, this);
+    Tank tank = new Tank(200, 400, Dir.UP, Group.GOOD, this);
     List<Bullet> bulletList = new ArrayList<>();
     List<Tank> tanks = new ArrayList<>();
-
+    private Explode explode = new Explode(100,100,this);
     public final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
 
     public TankFrame() {
@@ -64,8 +64,8 @@ public class TankFrame extends Frame {
     public void paint(Graphics g) {
         Color color = g.getColor();
         g.setColor(Color.WHITE);
-        g.drawString("子弹的个数" + bulletList.size(), 10,60);
-        g.drawString("敌人tanks的个数" + tanks.size(), 10,80);
+        g.drawString("子弹的个数" + bulletList.size(), 10, 60);
+        g.drawString("敌人tanks的个数" + tanks.size(), 10, 80);
         g.setColor(color);
         tank.paint(g);
         // 不能用foreach  会出现并发异常
@@ -81,6 +81,7 @@ public class TankFrame extends Frame {
                 bulletList.get(i).bulletKillTank(tanks.get(j));
             }
         }
+        explode.paint(g);
 
     }
 
