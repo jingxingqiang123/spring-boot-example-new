@@ -15,12 +15,22 @@ public class Bullet {
     private Dir dir;
     private TankFrame tankFrame = null;
     private boolean living = true;
+    private Group group = Group.BAD;
 
-    public Bullet(int x, int y, Dir dir, TankFrame tankFrame) {
+    public Bullet(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.group = group;
         this.tankFrame = tankFrame;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     // 画出tank的方向
@@ -65,6 +75,10 @@ public class Bullet {
     }
 
     public void bulletKillTank(Tank tank) {
+        // 判断是否是友方坦克
+        if (this.group == tank.getGroup()) return;
+
+        // TODO Rectangle新建的太多了 。用一个rectangle记录子弹的位置
         Rectangle rectangle1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
         Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), Tank.WIDTH, Tank.HEIGHT);
         // 判断矩形tank和子弹是否相交

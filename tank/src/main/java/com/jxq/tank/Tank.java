@@ -1,6 +1,7 @@
 package com.jxq.tank;
 
 import java.awt.*;
+import java.util.Random;
 
 /**
  * tank类
@@ -8,19 +9,30 @@ import java.awt.*;
 public class Tank {
     private int x, y;
     private Dir dir = Dir.DOWN;
-    private boolean moving = false;
-    private static final int SPEED = 5;
+    private boolean moving = true;
+    private static final int SPEED = 3;
     private TankFrame tankFrame = null;
     public static final int WIDTH = ResourceMgr.tankD.getWidth();
     public static final int HEIGHT = ResourceMgr.tankD.getHeight();
     private boolean living = true;
+    private final Random random = new Random();
+    private Group group = Group.BAD;
 
-    public Tank(int x, int y, Dir dir, TankFrame tankFrame) {
+    public Tank(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
         super();
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.group = group;
         this.tankFrame = tankFrame;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     public int getX() {
@@ -92,6 +104,10 @@ public class Tank {
                 y += SPEED;
                 break;
         }
+        // 地方坦克如果,没有被子弹击中，抛出圈外，不会消失。
+        if (x < 0 || y < 0 || x > TankFrame.GAME_WIDTH || y > TankFrame.GAME_HEIGHT) living = false;
+        // 可以只让敌方坦克发出来炮弹，自己手动控制
+        if (random.nextInt(10) > 8) this.fire();
     }
 
     /**
@@ -100,7 +116,7 @@ public class Tank {
     public void fire() {
         int bX = this.x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
         int bY = this.y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
-        tankFrame.bulletList.add(new Bullet(bX, bY, this.dir, this.tankFrame));
+        tankFrame.bulletList.add(new Bullet(bX, bY, this.dir, this.group, this.tankFrame));
     }
 
     public void die() {

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TankFrame extends Frame {
-    Tank tank = new Tank(200, 400, Dir.UP, this);
+    Tank tank = new Tank(200, 400, Dir.UP,Group.GOOD, this);
     List<Bullet> bulletList = new ArrayList<>();
     List<Tank> tanks = new ArrayList<>();
 
