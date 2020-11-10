@@ -14,7 +14,6 @@ public class TankFrame extends Frame {
     List<Tank> tanks = new ArrayList<>();
     private Explode explode = new Explode(100,100,this);
     public final static int GAME_WIDTH = 800, GAME_HEIGHT = 600;
-
     public TankFrame() {
         setTitle("tank");
         // false不能改变大小

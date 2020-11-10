@@ -1,6 +1,9 @@
 package com.jxq.tank;
 
 import java.awt.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 定义爆炸类
@@ -13,11 +16,12 @@ public class Explode {
     private TankFrame tankFrame = null;
     private boolean living = true;
     private int step = 0;
-
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
     public Explode(int x, int y, TankFrame tankFrame) {
         this.x = x;
         this.y = y;
         this.tankFrame = tankFrame;
+        executorService.execute(()->new Audio("audio\\war1.wav").loop());
     }
 
     // 画出Explode爆炸图片的位置
