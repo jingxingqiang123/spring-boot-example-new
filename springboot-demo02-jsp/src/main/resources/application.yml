@@ -1,9 +1,0 @@
-#配置tomcat端口,可以检查配置文件是否被加载
-server:
-  port: 8090
-#配置前缀后缀
-spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/view/
-      suffix: .jsp
