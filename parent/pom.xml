@@ -6,6 +6,7 @@
     <modules>
         <module>springboot-01-helloworld</module>
         <module>springboot-02-ssm</module>
+        <module>springboot-03-redisson</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -40,7 +41,12 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- lombok -->
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
