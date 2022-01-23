@@ -1,6 +1,6 @@
-package com.jxq.ssm.service;
+package com.example.ssm.service;
 
-import com.jxq.ssm.pojo.User;
+import com.example.ssm.pojo.User;
 
 import java.util.List;
 

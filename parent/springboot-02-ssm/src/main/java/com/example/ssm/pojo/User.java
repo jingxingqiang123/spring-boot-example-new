@@ -1,4 +1,4 @@
-package com.jxq.ssm.pojo;
+package com.example.ssm.pojo;
 
 /**
  * Created by jingxingqiang on 2019/7/17 23:52

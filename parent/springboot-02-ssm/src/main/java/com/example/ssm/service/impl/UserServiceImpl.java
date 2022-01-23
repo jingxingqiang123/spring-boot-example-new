@@ -1,8 +1,8 @@
-package com.jxq.ssm.service.impl;
+package com.example.ssm.service.impl;
 
-import com.jxq.ssm.mapper.UserMapper;
-import com.jxq.ssm.pojo.User;
-import com.jxq.ssm.service.UserService;
+import com.example.ssm.mapper.UserMapper;
+import com.example.ssm.pojo.User;
+import com.example.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

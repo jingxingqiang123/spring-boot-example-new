@@ -1,7 +1,7 @@
-package com.jxq.ssm.controller;
+package com.example.ssm.controller;
 
-import com.jxq.ssm.pojo.User;
-import com.jxq.ssm.service.UserService;
+import com.example.ssm.pojo.User;
+import com.example.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

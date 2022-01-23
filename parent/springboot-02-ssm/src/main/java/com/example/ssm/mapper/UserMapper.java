@@ -1,6 +1,6 @@
-package com.jxq.ssm.mapper;
+package com.example.ssm.mapper;
 
-import com.jxq.ssm.pojo.User;
+import com.example.ssm.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
