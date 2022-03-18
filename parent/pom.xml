@@ -7,6 +7,7 @@
         <module>springboot-01-helloworld</module>
         <module>springboot-02-ssm</module>
         <module>springboot-03-redisson</module>
+        <module>springboot-04-front-static-resources</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
