@@ -1,5 +1,7 @@
 package com.example.security.jjwt.utils;
 
+import com.example.security.jjwt.bean.UserBo;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -29,14 +31,27 @@ public class TokenJwtUtilsTest {
         Assert.assertEquals("Joe", subject);
     }
 
-
-    // eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb2UifQ.FRCHWlgIP_2FcKLLDsjhI1DT6uEL5_EvuxhpGOAMigw
     @Test
     public void contextLoads() {
         String token = TokenJwtUtils.generateToken();
         Assert.assertNotNull("token is null", token);
         log.info("++++++token:{}", token);
-        String subject = TokenJwtUtils.parseToken(token);
-        Assert.assertEquals("Joe", subject);
+        UserBo userBoFromToken = TokenJwtUtils.getUserBoFromToken(token);
+        Assert.assertTrue(userBoFromToken.getRole().stream().anyMatch((roleBo -> roleBo.getId() == 1)));
     }
+
+    @Test
+    public void getClaims() {
+        String token = TokenJwtUtils.generateToken();
+        Assert.assertNotNull("token is null", token);
+        log.info("++++++token: {}", token);
+        Claims claims = TokenJwtUtils.getClaims(token);
+        Assert.assertNotNull(claims);
+        Assert.assertEquals("me", claims.get("iss"));
+        Assert.assertEquals("you", claims.get("aud"));
+        Assert.assertEquals("Joe", claims.get("sub"));
+        Assert.assertEquals(32, String.valueOf(claims.get("jti")).replaceAll("-","").length());
+        log.info("++++++claims: {}", claims);
+    }
+
 }
