@@ -3,6 +3,7 @@ package com.example.mybatisplus;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * MybatisPlusApplicatin
@@ -10,10 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author: admin
  * @create: 2022/07/24 10:21
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @MapperScan("com.example.mybatisplus.mapper")
-public class MybatisPlusApplicatin {
+public class MybatisPlusApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MybatisPlusApplicatin.class);
+        SpringApplication.run(MybatisPlusApplication.class);
     }
 }
