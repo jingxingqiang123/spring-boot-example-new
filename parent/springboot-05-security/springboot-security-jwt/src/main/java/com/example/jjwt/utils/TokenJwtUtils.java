@@ -1,7 +1,6 @@
-package com.example.security.jjwt.utils;
+package com.example.jjwt.utils;
 
-import com.example.security.jjwt.bean.UserBo;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.example.jjwt.bean.UserBo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -11,7 +10,6 @@ import io.jsonwebtoken.jackson.io.JacksonSerializer;
 import io.jsonwebtoken.lang.Maps;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 import java.security.Key;
 import java.security.KeyPair;

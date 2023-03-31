@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @author: admin
  * @create: 2022/07/24 10:21
  */
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication()
 @MapperScan("com.example.mybatisplus.mapper")
 public class MybatisPlusApplication {
     public static void main(String[] args) {

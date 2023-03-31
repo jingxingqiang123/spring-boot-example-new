@@ -1,9 +1,8 @@
 package com.example.security.jjwt.utils;
 
-import com.example.security.jjwt.bean.UserBo;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.example.jjwt.bean.UserBo;
+import com.example.jjwt.utils.TokenJwtUtils;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
