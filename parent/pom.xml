@@ -8,7 +8,6 @@
         <module>springboot-02-ssm</module>
         <module>springboot-03-redisson</module>
         <module>springboot-04-front-static-resources</module>
-        <module>springboot-05-security</module>
         <module>springboot-05-security/springboot-security-jwt</module>
         <module>springboot-06-mybatis-plus</module>
     </modules>
